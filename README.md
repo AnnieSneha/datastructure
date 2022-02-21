@@ -502,6 +502,26 @@ Program 1:Write a C++ program for implementing Singly Linked list.
 						}
 						cout<<endl;
 					}
-			
+ OUTPUT:<br>
+        ![image](https://user-images.githubusercontent.com/97939284/154905536-baa85636-0018-4a4b-a66a-d08abdb82462.png)
+![image](https://user-images.githubusercontent.com/97939284/154905640-be53ed95-1ce5-417b-89ba-04e0ca01422c.png)
+![image](https://user-images.githubusercontent.com/97939284/154905743-339d1586-553e-41c5-92c1-ad25743a7961.png)
+![image](https://user-images.githubusercontent.com/97939284/154905861-7885a30e-9d66-46fc-8ac1-e4f0fc772de6.png)
+![image](https://user-images.githubusercontent.com/97939284/154905905-ff63f39e-bdac-4548-b54f-854745e98266.png)
+![image](https://user-images.githubusercontent.com/97939284/154905957-783c83ea-c2a4-44ef-9ff7-efd5641fbfa0.png)
+![image](https://user-images.githubusercontent.com/97939284/154905987-5444df75-2440-4140-8b47-5ed54506bd84.png)
+![image](https://user-images.githubusercontent.com/97939284/154906060-47c5a978-6486-4361-8450-06c006f05a1f.png)
+![image](https://user-images.githubusercontent.com/97939284/154906091-afef4a85-7140-4ea7-a56f-af4c7e1545fa.png)
+![image](https://user-images.githubusercontent.com/97939284/154906168-0c7488a0-f939-4cae-8341-6aa3e4de336f.png)
+![image](https://user-images.githubusercontent.com/97939284/154906239-f15fa5f8-1a76-414d-9ab0-3bb132a62c71.png)
+![image](https://user-images.githubusercontent.com/97939284/154906401-f2bc4dce-d78a-40e6-bd0e-b444524f0a96.png)
+![image](https://user-images.githubusercontent.com/97939284/154906523-d3dceb56-bd10-4212-9842-fa7de4404be8.png)
+![image](https://user-images.githubusercontent.com/97939284/154906593-39b7a883-b708-4623-923a-43d6b56f661b.png)
+![image](https://user-images.githubusercontent.com/97939284/154906733-7b832eed-8d71-421c-80b5-a6cd2c8cdd69.png)
+
+
+
+
+         
 			
 					
