@@ -519,7 +519,7 @@ Program 1:Write a C++ program for implementing Singly Linked list.
 ![image](https://user-images.githubusercontent.com/97939284/154906593-39b7a883-b708-4623-923a-43d6b56f661b.png)
 ![image](https://user-images.githubusercontent.com/97939284/154906733-7b832eed-8d71-421c-80b5-a6cd2c8cdd69.png)
 
-
+Program 2:Write a C++ program to split the linked list into two halves such that the element ‘e’ should be the first element of second list.
 
 
          
