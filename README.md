@@ -603,6 +603,19 @@ Program 2:Write a C++ program to split the linked list into two halves such that
     }
     return 0;
     }
+   
+   OUTPUT:<BR>
+	![image](https://user-images.githubusercontent.com/97939284/157169648-a8fdee45-2cfe-434b-ba11-3017d45052c9.png)
+        ![image](https://user-images.githubusercontent.com/97939284/157169744-ed0a1787-f8e9-46d3-bb21-b8f7892b6010.png)
+	
+Program 3:
+	
+	
+
+   
+   
+   
+   
 
 
          
