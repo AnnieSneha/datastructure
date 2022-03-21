@@ -662,7 +662,7 @@ Program 2:Write a C++ program to split the linked list into two halves such that
         }
 	
     OUTPUT:<BR>
-	![image](https://user-images.githubusercontent.com/97939284/157179442-75fff524-411f-4603-9982-a93c19173bf7.png)
+   ![image](https://user-images.githubusercontent.com/97939284/157179442-75fff524-411f-4603-9982-a93c19173bf7.png)
 
 PROGRAM 4:
 	
