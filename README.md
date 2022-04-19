@@ -1009,9 +1009,7 @@ Display the tree using inorder, preorder and post order traversal methods(a).
     } 
     }
     
-    
-    
-REDBLACKTREE 
+    REDBLACKTREE 
     #include<iostream>
     using namespace std;
 
@@ -1675,7 +1673,231 @@ REDBLACKTREE
     } 
     
  OUTPUT:![image](https://user-images.githubusercontent.com/97939284/163926107-a4fbdd38-b594-472d-8170-9e7153605e82.png)
+ 
+ 
+    #include <iostream>
+    using namespace std;
+    void MaxHeapify (int a[], int i, int n)
+    {
+    int j, temp;
+    temp = a[i];
+    j = 2*i;
+    while (j <= n)
+    {
+    if (j < n && a[j+1] > a[j])
+    j = j+1;
+    if (temp > a[j])
+    break;
+    else if (temp <= a[j])
+     {
+	a[j/2] = a[j];
+	j = 2*j;
+	}
+	}
+	a[j/2] = temp;
+	return;
+	}
+	void HeapSort(int a[], int n)
+        {
+	int i, temp;
+	for (i = n; i >= 2; i--)
+		{
+		temp = a[i];
+		a[i] = a[1];
+		a[1] = temp;
+		MaxHeapify(a, 1, i - 1);
+		}
+		}
+		void Build_MaxHeap(int a[], int n)
+		{
+			int i;
+			for(i = n/2; i >= 1; i--)
+				MaxHeapify(a, i, n);
+		}
+		int main()
+		{
+		int n, i,arr[100];
+		cout<<"\nEnter the number of data element to be sorted: ";
+		cin>>n;
+		n++;
+		for(i=1;i<n;i++)
+		 {
+		 cout<<"Enter element"<<i<<":";
+		 cin>>arr[i];
+		 }
+		Build_MaxHeap(arr, n-1);
+		HeapSort(arr, n-1);
+		cout<<"\nSorted Data ";
+		for (i = 1; i < n; i++)
+		cout<<" "<<arr[i];
+		return 0;
+		}
+
+OUTPUT:![image](https://user-images.githubusercontent.com/97939284/163927588-36df6b89-59c4-425b-aaeb-5597f55028ea.png)
+
+program 6: Write C++ program for implementing the max Heap and min heap  Sort technique.
+
+     #include <iostream>
+    using namespace std;
+    void MaxHeapify (int *a, int m, int n) {
+    int j, t;
+    t = a[m];
+    j = 2 * m;
+    while (j <= n) {
+    if (j < n && a[j+1] > a[j])
+    j = j + 1;
+    if (t > a[j])
+    break;
+    else if (t <= a[j]) 
+    {
+    a[j / 2] = a[j];
+    j = 2 * j;
+    }
+    }
+    a[j/2] = t;
+    return;
+    }
+    void MinHeapify (int *a,int i, int n)
+    {
+    int j, temp;
+    temp = a[i];
+    j = 2*i;
+    while (j <= n)
+    {
+    if (j < n && a[j+1] < a[j])
+    j = j+1;
+    if (temp < a[j])
+    break;
+    else if (temp >= a[j])
+    {
+    a[j/2] = a[j];
+    j = 2*j;
+    } 
+    }
+    a[j/2] = temp;
+    return;
+    }
+			
+    /*void HeapSort(int a[], int n)
+    {
+    int i, temp;
+    for (i = n; i >= 2; i--)
+    {
+				temp = a[i];
+				a[i] = a[1];
+				a[1] = temp;
+				MaxHeapify(a, 1, i - 1);
+			}
+			} */
+			
+			void build_maxheap(int *a,int n) {
+			 int k;
+			 for(k = n/2; k >= 1; k--) {
+			  MaxHeapify(a,k,n);
+			  }
+			}
+			void Build_MinHeap(int *a, int n)
+			{
+			int i;
+			for(i = n/2; i >= 1; i--)
+			{
+			
+				MinHeapify(a, i, n);
+			}
+			
+			}
+			
+			int main()
+			{
+			    int n, i,arr[100];
+			cout<<"\nEnter the number of data element to be sorted: ";
+			cin>>n;
+			//n++;
+			for(i=1;i<=n;i++)
+			 {
+			 cout<<"Enter element"<<i<<":";
+			 cin>>arr[i];
+			 }
+			 
+			 
+			Build_MinHeap(arr, n);
+			cout<<"\nMin heap Sorted Data \n";//correct
+			for (i = 1; i <= n; i++)
+			{
+			
+				cout<<" "<<arr[i];
+			}
+			
+			  build_maxheap(arr,n-1);
+			  cout<<"\nMax heap Sorted Data \n";
+			 for (i = 1; i <= n; i++) 
+			 {
+			  cout<<" "<<arr[i];
+			 }
+			}
+
+OUTPUT:![image](https://user-images.githubusercontent.com/97939284/163935872-dc44185e-d7d3-41c3-9fbe-d32568eababd.png)
+
+Write a C++ program to find subset of a given sets.
+   
+     #include <iostream>
+     #include<stack>
+     using namespace std;
+     int set[]={4,6,3,7,5,8,1};
+     int numberOfElements=7,sum=11;
+     class Subset
+     {
+	public:
+		stack<int> solutionSet;
+		bool hasSolution;
+		void solve(int s,int idx)
+		{
+			if(s>sum)
+			return;
+			if(s==sum)
+			{
+				hasSolution=true;
+				displaySolutionSet();
+				return;
 				
+			}
+			for(int i=idx;i<numberOfElements;i++)
+			{
+				solutionSet.push(set[i]);
+				solve(s+set[i],i+1);
+				solutionSet.pop();
+			}
+		}
+		void displaySolutionSet()
+		{
+			stack<int> temp;
+			while(!solutionSet.empty())
+			{
+				cout<<solutionSet.top()<<" ";
+				temp.push(solutionSet.top());
+				solutionSet.pop();
+			}
+			cout<< '\n';
+			while(!temp.empty())
+			{
+				solutionSet.push(temp.top());
+				temp.pop();
+				
+			}
+		}
+      };
+       int main()
+       {
+	Subset ss;
+	ss.solve(0,0);
+	if(ss.hasSolution==false)
+	cout<<"no solution";
+	return 0;
+	
+      }
+      
+  OUTPUT:![image](https://user-images.githubusercontent.com/97939284/163941798-d876504d-712d-48bc-a224-c949dae2436d.png)
+
 					 
 
  
