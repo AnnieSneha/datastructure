@@ -664,7 +664,12 @@ Program 2:Write a C++ program to split the linked list into two halves such that
     OUTPUT:<BR>
    ![image](https://user-images.githubusercontent.com/97939284/157179442-75fff524-411f-4603-9982-a93c19173bf7.png)
 
-PROGRAM 4:
+PROGRAM 4:Construct a binary search tree (BST) to support the following operations. 
+Given a key, perform a search in the BST. If the key is found then display “key found”.
+i.	Insert an element into a binary search tree.
+ii.	Delete an element from a binary search tree.
+Display the tree using inorder, preorder and post order traversal methods(a). 
+
 	
     # include <iostream> 
     # include <cstdlib> 
@@ -1006,7 +1011,7 @@ PROGRAM 4:
     
     
     
-    
+REDBLACKTREE 
     #include<iostream>
     using namespace std;
 
@@ -1522,25 +1527,21 @@ PROGRAM 4:
    ![image](https://user-images.githubusercontent.com/97939284/159218315-43bf36b2-a1fb-48e5-adde-2a3ce399bda1.png)
    ![image](https://user-images.githubusercontent.com/97939284/159218439-584f11f2-7355-42f5-80c4-777c84f9c4e6.png)
    
+   Write a C++ program for solving the N-Queen’s Problem using backtracking
    
-   
-   #include <bits/stdc++.h>
-#define N 4
-using namespace std;
- 
-
-void printSolution(int board[N][N])
-{
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++)
-            cout << " " << board[i][j] << " ";
+      #include <bits/stdc++.h>
+      #define N 4
+      using namespace std;
+      void printSolution(int board[N][N])
+      {
+      for (int i = 0; i < N; i++) {
+      for (int j = 0; j < N; j++)
+      cout << " " << board[i][j] << " ";
         printf("\n");
     }
-}
- 
-
-bool isSafe(int board[N][N], int row, int col)
-{
+    }
+    bool isSafe(int board[N][N], int row, int col)
+    {
     int i, j;
  
     
@@ -1559,60 +1560,124 @@ bool isSafe(int board[N][N], int row, int col)
             return false;
  
     return true;
-}
- 
-
-bool solveNQUtil(int board[N][N], int col)
-{
+    }
+    bool solveNQUtil(int board[N][N], int col)
+    {
   
     if (col >= N)
         return true;
- 
-  
-    for (int i = 0; i < N; i++) {
-     
-        if (isSafe(board, i, col)) {
-     
-            board[i][col] = 1;
- 
-       
-            if (solveNQUtil(board, col + 1))
-                return true;
- 
-            
-            board[i][col] = 0;
-        }
-    }
- 
-
+    for (int i = 0; i < N; i++)
+    {
+     if (isSafe(board, i, col))
+     {
+     board[i][col] = 1;
+     if (solveNQUtil(board, col + 1))
+      return true;
+      board[i][col]=0;
+      }
+      }
     return false;
-}
- 
-
-bool solveNQ()
-{
+    }
+    bool solveNQ()
+    {
     int board[N][N] = { { 0, 0, 0, 0 },
                         { 0, 0, 0, 0 },
                         { 0, 0, 0, 0 },
-                        { 0, 0, 0, 0 } };
+                        { 0, 0, 0, 0 } 
+		      };
  
     if (solveNQUtil(board, 0) == false) {
         cout << "Solution does not exist";
         return false;
     }
- 
     printSolution(board);
     return true;
-}
- 
-
-
-
-int main()
-{
+    }
+    int main()
+    {
     solveNQ();
     return 0;
-}
+    }
+    
+   Write a C++ program to implement merge sort technique using divide and conquer method.
+    
+    #include <iostream>
+    #include<conio.h>
+    using namespace std;
+
+    void Merge(int *a, int low, int high, int mid)
+    {
+	int i, j, k, temp[high-low+1];
+	i = low;
+	k = 0;
+        j = mid + 1;
+        while (i <= mid && j <= high)
+	{
+		if (a[i] < a[j])
+		{
+			temp[k] = a[i];
+			k++;
+			i++;
+		}
+		else
+		{
+			temp[k] = a[j];
+			k++;
+			j++;
+		}
+	}
+	while (i <= mid)
+	{
+		temp[k] = a[i];
+		k++;
+		i++;
+	}
+	while (j <= high)
+	{
+		temp[k] = a[j];
+		k++;
+		j++;
+	}
+	for (i = low; i <= high; i++)
+	{
+		a[i] = temp[i-low];
+	}
+        }
+       void MergeSort(int *a, int low, int high)
+        {
+	int mid;
+	if (low < high)
+	{
+		mid=(low+high)/2;
+			MergeSort(a, low, mid);
+		              MergeSort(a, mid+1, high);
+			Merge(a, low, high, mid);
+	}
+        }
+        int main()
+        {
+	int n, i;
+	cout<<"\nEnter the number of data element to be sorted: ";
+	cin>>n;
+ 
+	int arr[n];
+	for(i = 0; i < n; i++)
+	{
+		cout<<"Enter element "<<i+1<<": ";
+		cin>>arr[i];
+	}
+                           MergeSort(arr, 0, n-1);
+		cout<<"\nSorted Data ";
+	           for (i = 0; i < n; i++)
+                         cout<<"->"<<arr[i];
+
+    return 0;
+    } 
+    
+ OUTPUT:![image](https://user-images.githubusercontent.com/97939284/163926107-a4fbdd38-b594-472d-8170-9e7153605e82.png)
+				
+					 
+
  
 
 
